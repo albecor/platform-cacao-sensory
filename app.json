@@ -2,8 +2,8 @@
   "expo": {
     "name": "CacaoSensory",
     "slug": "cacao_sensory",
+    "scheme": "cacaosensory",
     "version": "1.0.0",
-    "entryPoint": "./src/index.js",
     "orientation": "portrait",
     "icon": "./src/assets/icon.png",
     "splash": {
@@ -41,6 +41,23 @@
     },
     "web": {
       "favicon": "./src/assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-font",
+        {
+          "fonts:": [
+            "./src/assets/fonts/Roboto.ttf",
+            "./src/assets/fonts/Roboto_medium.ttf",
+            "./src/assets/fonts/Gotham-Book.ttf",
+            "./src/assets/fonts/Gotham-Medium.ttf",
+            "./src/assets/fonts/Gotham-Bold.ttf",
+            "./src/assets/fonts/Gotham-Black.ttf"
+          ]
+        }
+      ],
+      "expo-secure-store",
+      "expo-router"
+    ]
   }
 }

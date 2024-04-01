@@ -15,28 +15,30 @@ import { VIEWER } from './roles';
 const Stack = createStackNavigator();
 const Authorization = () => {
   const [controller, dispatch] = useCacaoContext();
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const isAuthorized = controller.role === VIEWER;
-  useEffect(async () => {
-    try {
-      const token = await getItem('token');
-      if (token) {
-        await validToken(token);
-        const { data } = await getProfile(token);
-        const states = await fetchSamplesStates(token);
-        dispatch({ type: USER, value: data });
-        dispatch({ type: STATES, value: states });
-        dispatch({ type: USER_LOGIN_IN });
-        setLoading(false);
-      } else {
+  useEffect(() => {
+    (async () => {
+      try {
+        const token = await getItem('token');
+        if (token) {
+          await validToken(token);
+          const { data } = await getProfile(token);
+          const states = await fetchSamplesStates(token);
+          dispatch({ type: USER, value: data });
+          dispatch({ type: STATES, value: states });
+          dispatch({ type: USER_LOGIN_IN });
+          setLoading(false);
+        } else {
+          dispatch({ type: USER_LOGIN_OUT });
+          setLoading(false);
+        }
+      } catch (e) {
+        await deleteItem('token');
         dispatch({ type: USER_LOGIN_OUT });
         setLoading(false);
       }
-    } catch (e) {
-      await deleteItem('token');
-      dispatch({ type: USER_LOGIN_OUT });
-      setLoading(false);
-    }
+    })();
   }, []);
   if (loading) { return <LoadingScreen />; }
   return (
