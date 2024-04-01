@@ -1,0 +1,46 @@
+{
+  "expo": {
+    "name": "CacaoSensory",
+    "slug": "cacao_sensory",
+    "version": "1.0.0",
+    "entryPoint": "./src/index.js",
+    "orientation": "portrait",
+    "icon": "./src/assets/icon.png",
+    "splash": {
+      "image": "./src/assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FDE8DD"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": false,
+      "splash": {
+        "image": "./src/assets/splash.png",
+        "resizeMode": "cover",
+        "backgroundColor": "#FEFEFE"
+      }
+    },
+    "android": {
+      "package": "com.usco.cacao",
+      "versionCode": 2,
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/adaptive-icon.png",
+        "backgroundColor": "#FDE8DD"
+      },
+      "splash": {
+        "image": "./src/assets/splash.png",
+        "resizeMode": "cover",
+        "backgroundColor": "#FDE8DD"
+      },
+      "softwareKeyboardLayoutMode": "pan"
+    },
+    "web": {
+      "favicon": "./src/assets/favicon.png"
+    }
+  }
+}

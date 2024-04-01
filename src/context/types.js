@@ -1,0 +1,10 @@
+export const USER = 'USER';
+export const USER_LOGIN_IN = 'USER_LOGIN_IN';
+export const USER_LOGIN_OUT = 'USER_LOGIN_OUT';
+export const STATES = 'STATES';
+export const NOTIFY_LOADER = 'NOTIFY_LOADER';
+export const NOTIFY_SUCCESS = 'NOTIFY_SUCCESS';
+export const NOTIFY_ERROR = 'NOTIFY_ERROR';
+export const NOTIFY_EXPIRED = 'NOTIFY_EXPIRED';
+export const NOTIFY_CLEAN = 'NOTIFY_CLEAN';
+export const NOTIFY_WARNING = 'NOTIFY_WARNING';
